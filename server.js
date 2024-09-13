@@ -20,6 +20,17 @@ app.get('/budget', (req, res) => {
         res.json(budgetData);
       });
 }); 
+app.get("/d3js", (req, res) => {
+    fs.readFile("d3js.json", "utf8", (err, data) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error reading data");
+        return;
+      }
+      const d3jsData = JSON.parse(data);
+      res.json(d3jsData);
+    });
+  });
 app.listen(port, () => {
     console.log(`API served at http://localhost:${port}`);
 });

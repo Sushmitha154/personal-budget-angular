@@ -1,0 +1,45 @@
+{
+    "myBudget": [
+        {
+            "title": "A",
+            "budget": 55,
+            "color": "Orange"
+        },
+        {
+            "title": "B",
+            "budget": 350,
+            "color": "Yellow"
+        },
+        {
+            "title": "C",
+            "budget": 70,
+            "color": "Brown"
+        },
+        {
+            "title": "D",
+            "budget": 50,
+            "color": "LightBlue"
+        },
+        {
+            "title": "E",
+            "budget": 100,
+            "color": "Blue"
+        },
+        {
+            "title": "F",
+            "budget": 80,
+            "color": "Pink"
+        },
+        {
+            "title": "G",
+            "budget": 500,
+            "color": "Green"
+        }
+    ]
+}
+
+
+
+
+
+
