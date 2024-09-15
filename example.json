@@ -7,7 +7,7 @@
         },
         {
             "title": "B",
-            "budget": 350,
+            "budget": 35,
             "color": "Yellow"
         },
         {
@@ -22,17 +22,17 @@
         },
         {
             "title": "E",
-            "budget": 100,
+            "budget": 10,
             "color": "Blue"
         },
         {
             "title": "F",
-            "budget": 80,
+            "budget": 45,
             "color": "Pink"
         },
         {
             "title": "G",
-            "budget": 500,
+            "budget": 50,
             "color": "Green"
         }
     ]
