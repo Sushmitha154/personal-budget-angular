@@ -161,7 +161,7 @@
 
         // Fetch budget data from server and create the Chart.js doughnut chart
         function getBudget() {
-            axios.get('/budget')
+            axios.get('http://localhost:3000/budget')
                 .then(function (res) {
                     console.log("Fetched Budget Data:", res.data); // Log the data
                     for (var i = 0; i < res.data.myBudget.length; i++) {
@@ -180,7 +180,7 @@
 
         // Function to create bar chart using D3.js
         function getChartUsingD3JS() {
-            axios.get('/budget')
+            axios.get('http://localhost:3000/budget')
                 .then(function (res) {
                     const budgetData = res.data.myBudget;
                     console.log("D3 Budget Data:", budgetData); // Log D3 Data
@@ -247,7 +247,7 @@
 
         // Function to create donut chart using D3.js
         function getChart() {
-            axios.get('/example')
+            axios.get('http://localhost:3000/example')
                 .then(function (res) {
                     console.log("Donut Chart Data:", res.data.myBudget); 
 

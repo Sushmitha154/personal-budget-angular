@@ -2,8 +2,9 @@ const express = require('express');
 const fs = require("fs");
 const app = express();
 const port = 3000;
+const cors = require('cors');
 
-app.use('/', express.static('public'));
+app.use(cors());
 
 app.get('/hello', (req, res) => {
     res.send('Hello World!');
