@@ -54,7 +54,6 @@ export class HomepageComponent implements AfterViewInit {
         type: "pie",
         data: this.dataSource,
         options: {
-          cutout: '40%',
           responsive: false,
           maintainAspectRatio: false,
       },
