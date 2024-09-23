@@ -84,6 +84,14 @@ export class HomepageComponent implements AfterViewInit {
         .range([height, 0])
         .domain([0, 70]);
 
+        const tooltip = d3.select('body').append('div')
+        .attr('class', 'tooltip')
+        .style('opacity', 0)
+        .style('position', 'absolute')
+        .style('background-color', 'white')
+        .style('border', '1px solid black')
+        .style('padding', '5px');
+
       svg.selectAll('rect')
         .data(budgetData)
         .enter().append('rect')
@@ -91,7 +99,18 @@ export class HomepageComponent implements AfterViewInit {
         .attr('y', (d: any) => y(d.budget))
         .attr('width', x.bandwidth())
         .attr('height', (d: any) => height - y(d.budget))
-        .attr('fill', (d: any) => d.color);
+        .attr('fill', (d: any) => d.color)
+        .on('mouseover', function (event, d) {
+          tooltip.style('opacity', 1);
+        })
+        .on('mousemove', function (event, d: any) {
+          tooltip.html(`<strong>${d.title}</strong><br>Budget: $${d.budget}`)
+            .style('left', (event.pageX + 10) + 'px')
+            .style('top', (event.pageY - 30) + 'px');
+        })
+        .on('mouseout', function () {
+          tooltip.style('opacity', 0);
+        });
 
       svg.append('g')
         .attr('transform', `translate(0,${height})`)
