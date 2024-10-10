@@ -32,15 +32,15 @@ export class HomepageComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.http.get('http://localhost:3000/budget')
-        .subscribe((res: any) => {
-          for (var i = 0; i < res.myBudget.length; i++) {
-            this.dataSource.datasets[0].data[i] = res.myBudget[i].budget;
-            this.dataSource.labels[i] = res.myBudget[i].title;
-            this.dataSource.datasets[0].backgroundColor[i] = res.myBudget[i].color;
+        this.dataService.getData().subscribe((exampleData: any) => {
+          for (var i = 0; i < exampleData.myBudget.length; i++) {
+            this.dataSource.datasets[0].data[i] = exampleData.myBudget[i].budget;
+            this.dataSource.labels[i] = exampleData.myBudget[i].title;
+            this.dataSource.datasets[0].backgroundColor[i] = exampleData.myBudget[i].color;
           }
           this.createChart();
         });
+        this.dataService.fetchDataIfNeeded();
       this.dataService.getExampleData().subscribe((exampleData) => {
         this.createBarChart(exampleData);
       });
